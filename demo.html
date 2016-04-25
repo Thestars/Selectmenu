@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>select menu</title>
+  <script src="external/jquery1.11.3.js" charset="utf-8"></script>
+  <script src="select_menu.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(function(){
+      $(".select-menu").xSelect();
+    })
+  </script>
+  <style>
+  *{padding:0;margin:0;}
+    .x-select-menu{
+      background: #fafafa;
+      cursor: pointer;
+      width:20%;
+    }
+    .x-select-menu span{
+      background: #eee;
+      display: block;
+      padding:.5em 1em;
+      border: 1px solid #ccc;
+    }
+    .x-select-menu ul{display:none;border:1px solid #ccc;border-width:0 1px 1px 1px;}
+    .x-select-menu ul,.x-select-menu li{white-space:normal;}
+    .x-select-menu li{display: block;}
+    .x-select-menu li:hover{background: #ddd;}
+  </style>
+</head>
+<body>
+  <select class="select-menu" name="">
+    <option value="1">item 1</option>
+    <option value="2">item 2</option>
+    <option value="3">item 3</option>
+  </select>
+</body>
+</html>
