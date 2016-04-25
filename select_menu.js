@@ -11,8 +11,9 @@
                 select_html.index = i;
                 $(select_html).append("<span>"+$(this).find("option:eq(0)").text()+"</span>");
                 $(select_html).append("<ul></ul>");
+                $(select_html).append("<input type=\"hidden\" class=\"\" value=\"\">");
                  for (var j = 0; j < $(this).find("option").length; j++) {
-                   $(select_html).find("ul").append("<li>"+ $(this).find("option:eq("+j+")").text() +"</li>")
+                   $(select_html).find("ul").append("<li>"+ $(this).find("option:eq("+j+")").text() +"</li>");
                  }
                 $(select_html).on("click",function(e){
                   $(this).find("ul").slideDown("fast");
@@ -20,6 +21,7 @@
                 })
                 $(select_html).find("li").on("click",function(e){
                   $(this).parent().slideUp("fast").prev().text($(this).text());
+                  $(this).parent().next().val($(select_DOM_option[$(this).index()]).val());
                   e.stopPropagation();
                 })
             return select_html;
